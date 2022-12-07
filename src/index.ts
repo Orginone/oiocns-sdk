@@ -2,6 +2,10 @@ import type { AxiosRequestConfig } from "axios";
 import { InitOption } from "./InitOption";
 import { AssetCloudResponseBody } from "./Response";
 
+export interface RequestConfig extends AxiosRequestConfig {
+    [key: string]: any;
+}
+
 /** SDK客户端类 */
 export default class OrginoneSdk {
     private _timeout: number;
@@ -32,7 +36,7 @@ export default class OrginoneSdk {
 
     readonly actions: {
         readonly [controller: string]: {
-            readonly [method: string]: (config?: AxiosRequestConfig, ...args: any[]) => Promise<AssetCloudResponseBody>;
+            readonly [method: string]: (config?: RequestConfig, ...args: any[]) => Promise<AssetCloudResponseBody>;
         }
     } = {};
 
@@ -103,7 +107,7 @@ export default class OrginoneSdk {
             let subUrl = url + ((url && url.length > 0) ? "." : "") + key
             switch (typeof (sub)) {
                 case "string":
-                    req[key] = async (options: AxiosRequestConfig = {}, ...args: any) => {
+                    req[key] = async (options: RequestConfig = {}, ...args: any) => {
                         let token = await this.getTokenInfo();
                         options.headers ||= {};
                         options.headers['Authorization'] = token;
@@ -148,7 +152,7 @@ export default class OrginoneSdk {
      * @param args 额外可边参数
      * @returns 异步等待
      */
-    private _send<T>(url: string, options: AxiosRequestConfig, ...args: any) {
+    private _send<T>(url: string, options: RequestConfig, ...args: any) {
         return new Promise<T>((resolve, reject) => {
             let sendId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
                 var r = Math.random() * 16 | 0,
