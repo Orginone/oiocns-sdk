@@ -17,7 +17,7 @@
     ],
     "paths": {
       "@": [ "src/*" ],
-      "orginone.sdk": [ "../src/*" ],
+      "@orginone/app-sdk": [ "../src/*" ],
     }
   },
   "include": [

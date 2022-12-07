@@ -1,6 +1,6 @@
 import { defineComponent, h, ref, onMounted } from "vue";
 
-import OrginoneSdk from "orginone.sdk";
+import OrginoneSdk from "@orginone/app-sdk";
 
 export default defineComponent({ setup() {
     const user = ref("loading...");

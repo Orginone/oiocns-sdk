@@ -55,7 +55,7 @@ const config = {
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
         alias: {
-            "orginone.sdk": path.resolve(__dirname, "../src")
+            "@orginone/app-sdk": path.resolve(__dirname, "../src")
         }
     },
 };

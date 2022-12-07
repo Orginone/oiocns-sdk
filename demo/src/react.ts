@@ -1,6 +1,6 @@
 import { createElement as h, useState, useEffect } from "react";
 
-import OrginoneSdk from "orginone.sdk";
+import OrginoneSdk from "@orginone/app-sdk";
 
 export default function App() {
     const [user, updateUser] = useState("loading...");

@@ -1,5 +1,5 @@
 {
-  "name": "orginone.sdk",
+  "name": "@orginone/app-sdk",
   "version": "1.3.3",
   "description": "奥集能前端SDK",
   "main": "dist/sdk.umd.js",
@@ -21,7 +21,6 @@
     "url": ""
   },
   "dependencies": {
-    "@avolantis/ts-guid": "^0.1.0-preview.3",
     "@babel/polyfill": "^7.10.4",
     "core-js": "^3.6.1"
   },

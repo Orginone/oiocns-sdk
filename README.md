@@ -1,6 +1,6 @@
 ## 奥集能前端 SDK
 
-![npm](https://img.shields.io/npm/v/orginone.sdk?color=green)
+![npm](https://img.shields.io/npm/v/@orginone/app-sdk?color=green)
 
 
 ### 注意：
@@ -20,7 +20,7 @@ SDK采用TypeScript开发，采用npm包引入可以自动获得完善的类型�
 
     可以使用ES7 `async/await` 语法简化异步调用
     ```javascript
-    import OrginoneSdk from "orginone.sdk";
+    import OrginoneSdk from "@orginone/app-sdk";
     // ...
 
     // 创建时提供传入初始化配置，可以不传

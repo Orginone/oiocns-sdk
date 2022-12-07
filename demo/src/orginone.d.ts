@@ -1,1 +1,1 @@
-declare module "orginone.sdk";
+declare module "@orginone/app-sdk";
