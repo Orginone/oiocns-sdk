@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import { createRoot } from 'react-dom/client';
-import React from 'react';
+import { createElement } from 'react';
 
 import VueApp from "./vue";
 import ReactApp from "./react";
@@ -14,13 +14,12 @@ if (window.top == self) {
 }
 
 function selectFramework(type: "vue" | "react") {
-    
     if (type == "vue") {
         const vue = createApp(VueApp);
         vue.mount(root);
     } else {
         const react = createRoot(root);
-        react.render(React.createElement(ReactApp));
+        react.render(createElement(ReactApp));
     }
 }
 
@@ -29,6 +28,5 @@ const btnReact = document.querySelector<HTMLButtonElement>("#btn_react");
 
 btnVue.onclick = () => selectFramework("vue");
 btnReact.onclick = () => selectFramework("react");
-
 
 })();

@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { createElement as h, useState, useEffect } from "react";
 
 import OrginoneSdk from "orginone.sdk";
 
-function App(props: Record<string ,any>) {
-    const h = React.createElement;
-
+export default function App() {
     const [user, updateUser] = useState("loading...");
     async function init() {
         const client = new OrginoneSdk({
@@ -22,4 +20,3 @@ function App(props: Record<string ,any>) {
         "User: " + user,
     ]);
 }
-export default App;

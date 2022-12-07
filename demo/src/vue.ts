@@ -4,9 +4,6 @@ import OrginoneSdk from "orginone.sdk";
 
 export default defineComponent({ setup() {
     const user = ref("loading...");
-    onMounted(() => {
-        init();
-    });
     async function init() {
         const client = new OrginoneSdk({
             timeout: 3000
@@ -16,7 +13,9 @@ export default defineComponent({ setup() {
         const res = await client.actions.person.tokenInfo();
         user.value = res.data.userInfo.name;
     }
-
+    onMounted(() => {
+        init();
+    });
     return () => {
         return h("div", {}, [
             "User: " + user.value
