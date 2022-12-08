@@ -12,7 +12,7 @@
     "build:umd": "webpack --mode production",
     "build": "npm run build:umd && npm run build:es6 && npm run types",
     "pub": "npm publish --registry http://192.168.1.211:30677/",
-    "pub:npmjs": "npm publish --registry http://registry.npmjs.org/  --access public"
+    "pub:npmjs": "npm publish --registry https://registry.npmjs.org/  --access public"
   },
   "author": "realVeer",
   "license": "MIT",
